@@ -11,6 +11,7 @@ const copyFile = require('./tools/copy-file');
 const eslint = require('gulp-eslint');
 const genHtml = require('./tools/generate-html');
 const gulp = require('gulp');
+const KarmaServer = require('karma').Server;
 const path = require('path');
 const resolve = require('./tools/path-resolve')([ __dirname ]);
 const task = require('./tools/gulp-task-builder.js')(gulp);
@@ -112,4 +113,19 @@ task('clean', (done, logger) => {
     }
     done();
   });
+});
+
+function test(singleRun, done) {
+  new KarmaServer({
+    configFile: resolve([ 'configs', 'karma.conf.js' ]),
+    singleRun: singleRun
+  }, done).start();
+}
+
+gulp.task('test', done => {
+  test(true, done);
+});
+
+gulp.task('test:watch', done => {
+  test(false, done);
 });
