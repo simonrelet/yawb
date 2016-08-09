@@ -49,6 +49,7 @@
     "gulp-eslint": "^3.0.1",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^2.22.0",
+    "json-loader": "^0.5.4",
     "minimist": "^1.2.0",
     "node-sass": "^3.8.0",
     "pug": "^2.0.0-beta4",

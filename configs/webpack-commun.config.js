@@ -14,6 +14,10 @@ module.exports = function() {
         {
           test: /\.svg$/,
           loader: 'file-loader'
+        },
+        {
+          test: /\.json$/,
+          loader: 'json-loader'
         }
       ]
     },
@@ -21,7 +25,7 @@ module.exports = function() {
     resolve: {
       modulesDirectories: [ 'node_modules' ],
       root: resolve([ 'app' ]),
-      extensions: [ '', '.js', '.jsx', '.scss' ]
+      extensions: [ '', '.js', '.jsx', '.scss', '.json' ]
     }
   };
 };
