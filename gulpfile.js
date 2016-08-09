@@ -9,6 +9,7 @@ const argv = require('minimist')(process.argv.slice(2), {
 const del = require('del');
 const copyFile = require('./tools/copy-file');
 const genHtml = require('./tools/generate-html');
+const path = require('path');
 const resolve = require('./tools/path-resolve')([ __dirname ]);
 const task = require('./tools/gulp-task-builder.js')(require('gulp'));
 const webpack = require('./tools/webpack-promise');
@@ -87,9 +88,13 @@ task('build', (done, logger) => {
 });
 
 task('clean', (done, logger) => {
-  del([ paths.outputDir ])
-    .then(paths => {
-      logger(`Deleted: ${JSON.stringify(paths, null, '  ')}`);
-      done();
-    });
+  const filesToDelete = [ paths.outputDir ];
+
+  del(filesToDelete).then(files => {
+    if (files.length > 0) {
+      files = files.map(file => path.relative(__dirname, file));
+      logger(`Deleted file(s):\n\n  ${files.join('\n  ')}\n`);
+    }
+    done();
+  });
 });
