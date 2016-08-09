@@ -8,10 +8,12 @@ const argv = require('minimist')(process.argv.slice(2), {
 
 const del = require('del');
 const copyFile = require('./tools/copy-file');
+const eslint = require('gulp-eslint');
 const genHtml = require('./tools/generate-html');
+const gulp = require('gulp');
 const path = require('path');
 const resolve = require('./tools/path-resolve')([ __dirname ]);
-const task = require('./tools/gulp-task-builder.js')(require('gulp'));
+const task = require('./tools/gulp-task-builder.js')(gulp);
 const webpack = require('./tools/webpack-promise');
 const webpackDevServer = require('./tools/webpack-dev-server-promise');
 const webpackDevConfig = require('./configs/webpack-dev.config.js');
@@ -85,6 +87,19 @@ task('build', (done, logger) => {
       logger(err);
       done(err);
     });
+});
+
+task('lint', done => {
+  const files = [
+    '**/*.@(js|jsx)',
+    '!node_modules/**',
+    `!${paths.outputDir}/**`
+  ];
+
+  return gulp.src(files)
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 task('clean', (done, logger) => {
