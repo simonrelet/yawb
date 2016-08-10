@@ -3,12 +3,11 @@
   "version": "0.0.1",
   "description": "Yet Another Web Boilerplate",
   "scripts": {
-    "build": "gulp build",
-    "clean": "gulp clean",
-    "lint": "gulp lint",
-    "start": "gulp start",
-    "test": "gulp test",
-    "test:watch": "gulp test:watch"
+    "build": "node scripts/build",
+    "clean": "node scripts/clean",
+    "lint": "node scripts/lint",
+    "start": "node scripts/start",
+    "test": "node scripts/tests"
   },
   "repository": {
     "type": "git",
@@ -51,9 +50,6 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "fs-promise": "^0.5.0",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
     "karma": "^1.1.2",

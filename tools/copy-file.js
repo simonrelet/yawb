@@ -1,7 +1,7 @@
 'use strict';
 
-const path = require('path');
 const fs = require('fs-promise');
+const path = require('path');
 
 module.exports = function(options) {
   const basename = path.basename(options.src);

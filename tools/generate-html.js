@@ -1,7 +1,7 @@
 'use strict';
 
-const pug = require('pug');
 const fs = require('fs-promise');
+const pug = require('pug');
 
 module.exports = function(options) {
   const template = pug.compileFile(options.template, { pretty: '  ' });
