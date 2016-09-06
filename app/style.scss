@@ -1,9 +1,10 @@
-$html-background-color: red;
+$html-background-color: #eee;
+$text-color: #333;
 
 html {
   background-color: $html-background-color;
 }
 
 .title {
-  color: green;
+  color: $text-color;
 }

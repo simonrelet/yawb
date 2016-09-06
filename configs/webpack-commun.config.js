@@ -23,7 +23,6 @@ module.exports = function() {
     },
 
     resolve: {
-      modulesDirectories: [ 'node_modules' ],
       root: resolve([ 'app' ]),
       extensions: [ '', '.js', '.jsx', '.scss', '.json' ]
     }

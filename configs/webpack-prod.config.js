@@ -3,6 +3,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+
 const communConfig = require('./webpack-commun.config.js');
 
 module.exports = function(options) {
