@@ -6,7 +6,7 @@
     "build": "node scripts/build",
     "clean": "node scripts/clean",
     "lint": "node scripts/lint",
-    "start": "node scripts/start",
+    "start": "webpack-dashboard -- node scripts/start",
     "test": "node scripts/tests"
   },
   "repository": {
@@ -67,6 +67,7 @@
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.1"
   }
