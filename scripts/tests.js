@@ -27,4 +27,7 @@ Promise.resolve()
   .then(() => log('Starting tests...'))
   .then(() => karma(options))
   .then(() => process.exit(0))
-  .catch(err => process.exit(err.code));
+  .catch(err => {
+    console.error(err.message);
+    process.exit(err.code);
+  });

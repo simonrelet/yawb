@@ -6,7 +6,6 @@ const paths = require('./paths');
 const resolve = require('../tools/path-resolve')([ __dirname, '..' ]);
 
 const log = console.log.bind(console);
-const error = console.error.bind(console);
 const filesToDelete = [ paths.outputDir ];
 
 Promise.resolve()
@@ -22,6 +21,6 @@ Promise.resolve()
     process.exit(0);
   })
   .catch(err => {
-    error(err);
+    console.error(err);
     process.exit(1);
   });

@@ -21,7 +21,7 @@ const options = {
 };
 
 Promise.resolve()
-  .then(() => log('Bundle...'))
+  .then(() => log('Bundling...'))
   .then(() => webpack(options))
   .then(msg => log(msg))
   .then(() => log('Generating HTML...'))

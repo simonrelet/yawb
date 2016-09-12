@@ -8,7 +8,10 @@ module.exports = function(options) {
       if (code === 0) {
         resolve();
       } else {
-        reject({ code });
+        reject({
+          code,
+          message: `Karma Server exited with code ${code}`
+        });
       }
     }).start();
   });

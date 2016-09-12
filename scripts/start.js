@@ -11,7 +11,6 @@ const webpackDevConfig = require('../configs/webpack-dev.config.js');
 const webpackDevServer = require('../tools/webpack-dev-server-promise');
 
 const log = console.log.bind(console);
-const error = console.error.bind(console);
 const options = {
   config: webpackDevConfig({
     port: argv.port,
@@ -30,6 +29,6 @@ Promise.resolve()
   .then(() => webpackDevServer(options))
   .then(() => log(`Open a browser on http://localhost:${argv.p}\n`))
   .catch(err => {
-    error(err);
+    console.error(err);
     process.exit(1);
   });
