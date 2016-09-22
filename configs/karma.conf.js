@@ -21,7 +21,7 @@ module.exports = function(config) {
       'karma-mocha-reporter'
     ],
     preprocessors: {
-      [`${entry}`]: [ 'webpack' ]
+      [entry]: [ 'webpack' ]
     },
     reporters: [ 'mocha' ],
     webpack: webpackTestsConfig()

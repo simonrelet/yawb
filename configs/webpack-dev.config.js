@@ -36,7 +36,7 @@ module.exports = function(options) {
         exclude: /node_modules/,
         loaders: [
           'style',
-          `css?modules&importLoaders=1&localIdentName=${classesPattern}`,
+          `css?camelCase&modules&importLoaders=1&localIdentName=${classesPattern}`,
           'sass'
         ]
       }]

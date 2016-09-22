@@ -6,8 +6,8 @@ import App from './index';
 import { expect } from 'chai';
 
 describe('<App />', () => {
-  it('renders a <h1 />', () => {
+  it('renders a <div />', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('h1')).to.have.length(1);
+    expect(wrapper.find('div')).to.have.length(1);
   });
 });
