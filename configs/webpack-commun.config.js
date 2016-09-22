@@ -12,6 +12,11 @@ module.exports = function() {
           loader: 'babel-loader'
         },
         {
+          test: /\.jsx\.html$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader!html-to-react'
+        },
+        {
           test: /\.svg$/,
           loader: 'file-loader'
         },
@@ -24,7 +29,7 @@ module.exports = function() {
 
     resolve: {
       root: resolve([ 'app' ]),
-      extensions: [ '', '.js', '.jsx', '.scss', '.json' ]
+      extensions: [ '', '.js', '.jsx', '.jsx.html', '.scss', '.json' ]
     }
   };
 };

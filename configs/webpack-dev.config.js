@@ -1,6 +1,5 @@
 'use strict';
 
-const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
@@ -13,7 +12,6 @@ module.exports = function(options) {
     filename: 'index.html',
     inject: 'body'
   });
-  const dashboardPlugin = new DashboardPlugin();
   const classesPattern = '[name]__[local]___[hash:base64:5]';
 
   return merge(communConfig(), {
@@ -44,8 +42,7 @@ module.exports = function(options) {
 
     plugins: [
       hotModuleReplacementPlugin,
-      htmlWebpackPlugin,
-      dashboardPlugin
+      htmlWebpackPlugin
     ]
   });
 };
