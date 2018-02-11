@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`defaultState should have a state 1`] = `
+Object {
+  "hasNewVersion": false,
+  "theme": "default",
+}
+`;
